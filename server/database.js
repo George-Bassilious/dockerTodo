@@ -7,8 +7,9 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
       // Cannot open database
       console.error(err.message)
       throw err
-    }else{
-        console.log('Connected to the SQLite database.')
+    } else {
+        //console.log('Connected to the SQLite database.')
+        //db.run('DROP TABLE IF EXISTS admins');
         db.run(`CREATE TABLE todos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             data text, 
@@ -17,11 +18,11 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         (err) => {
             if (err) {
                 // Table already created
-            }else{
+            } else {
                 // Table just created, creating some rows
                 var insert = 'INSERT INTO todos (data, completed) VALUES (?,?)'
-                db.run(insert, ["task1",false])
-                db.run(insert, ["user",false])
+                db.run(insert, ["task 1",false])
+                db.run(insert, ["do dishes",false])
             }
         });  
     }

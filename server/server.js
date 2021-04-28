@@ -4,9 +4,7 @@ var app = express()
 var cors = require('cors');
 var db = require("./database.js")
 
-
-
-app.use(cors());
+app.use(cors()); // ? 
 
 // Server port
 var HTTP_PORT = 8000 
@@ -16,13 +14,14 @@ app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 
-// Root endpoint
+// Root endpoint // when connecting to localhost 
 app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
 
 // Insert here other API endpoints
 
+// get all todos 
 app.get("/api/todos", (req, res, next) => {
     var sql = "select * from todos"
     var params = []
@@ -42,4 +41,3 @@ app.get("/api/todos", (req, res, next) => {
 app.use(function(req, res){
     res.status(404);
 });
-
