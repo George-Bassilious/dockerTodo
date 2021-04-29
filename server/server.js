@@ -23,6 +23,7 @@ app.get("/", (req, res, next) => {
 
 // get all todos 
 app.get("/api/todos", (req, res, next) => {
+    console.log("HEJ")
     var sql = "select * from todos"
     var params = []
     db.all(sql, params, (err, rows) => {
