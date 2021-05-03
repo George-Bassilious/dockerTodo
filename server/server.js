@@ -38,6 +38,29 @@ app.get("/api/todos", (req, res, next) => {
       });
 });
 
+
+app.put("/api/todos/:message", (req, res, next) => {
+    
+
+    var insert = 'INSERT INTO todos (data, completed) VALUES (?,?)'
+    db.run(insert, [req.params.message,false])
+
+    res.status(200).json({"success":"true"})
+});
+
+
+app.delete("/api/todos/:message", (req, res, next) => {
+    
+
+        var deleter = 'DELETE from todos WHERE data=?'
+
+        db.run(deleter , req.params.message)
+
+        res.status(200).json({"success":"true"})
+
+
+});
+
 // Default response for any other request
 app.use(function(req, res){
     res.status(404);
