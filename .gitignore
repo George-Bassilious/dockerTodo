@@ -56,4 +56,4 @@ web-build/
 
 #SQlite
 
-*s/db.Sqlite
+*/db.Sqlite
