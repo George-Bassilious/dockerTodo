@@ -23,9 +23,6 @@ export default function App() {
 
   // delete to-do with content = content
   function deleteTodo(content) {
-    console.log('delete', content);
-
-    // todo: delete in db
 
     const requestOptions = {
       method: 'DELETE',
@@ -39,10 +36,8 @@ export default function App() {
 
   // add new to-do w content that is described
   function addTodo(content) {
-    console.log('add', content);
-
     document.getElementById('newTodo').value = ''; // clears input field
-    // todo: add in db
+    
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
