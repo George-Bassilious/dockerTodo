@@ -1,3 +1,5 @@
+# Code based on https://www.rockyourcode.com/how-to-run-react-native-expo-web-in-a-docker-container/ 
+
 # pull base image
 FROM node:14.13.1-buster-slim
 
