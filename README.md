@@ -1,32 +1,69 @@
+# Implement Docker in a React Native app 
 
-## How to use Docker
+## About the repository
 
-For the first time rebuild all images
+// ADD LINK TO VIDEO TUTORIAL 
 
+This repository is complementary to this video tutorial which shows how to implement Docker in a React Native application. 
+
+## Authors 
+
+George Bassilious @George-Bassilious
+Eva Despinoy @evkade
+
+## Prerequisites 
+
+- Have Node.js and installed on you device
+You can find help for installation here : https://nodejs.org/en/download/
+
+- Have docker-compose and docker destop installed 
+You can find help for installation here : https://www.docker.com/get-started
+
+## Commands used in the tutorial: 
+
+Install needed dependencies (when running for the first time) 
 ```bash
-$ docker-compose up --build
+$ npm install 
 ```
 
-After initial build, the --build flag can be removed for faster startup
+Run server
+```bash
+$ node server.js 
+```
 
+Run app
+```bash
+$ npm run web 
+```
+
+Build Docker image
+```bash
+$ docker-compose build
+```
+
+Run Docker image
 ```bash
 $ docker-compose up
 ```
+or (if you want to run it with Docker-desktop)
+```bash
+$ docker-compose up -d
+```
 
 List all active docker containers
-
+```bash
+$ docker ps
 ```
-docker ps
+
+Stop app 
+```bash
+$ CTRL c
 ```
 
-Execute an arbitrary command on a specific container
-
+Delete docker environment(s)
+```bash
+$ docker-compose down
 ```
-docker exec -it <name of container> <command to exec>
 
-Example: Shell access to container
-docker exec -it <name of container> sh
-
-Example: Run npm tests
-docker exec -it <name of container> npm run test
-```
+## Acknowledgments 
+The code used for the docker implementation is based on the code by Sophia Brandt found here: https://www.rockyourcode.com/how-to-run-react-native-expo-web-in-a-docker-container/
