@@ -15,8 +15,5 @@ services:
         healthcheck:
             disable: true
     
-
-    
-
 volumes:
   notused:
