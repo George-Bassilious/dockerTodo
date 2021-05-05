@@ -14,7 +14,5 @@ services:
             - ./App/package-lock.json:/usr/src/app/package-lock.json
             - notused:/usr/src/app/node_modules
 
-    
-
 volumes:
   notused:

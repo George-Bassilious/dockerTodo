@@ -4,12 +4,10 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Install app dependencies
-
 COPY package*.json ./
 
 #install node_modules folder
 RUN npm install
-
 
 # Bundle app source
 COPY . .
