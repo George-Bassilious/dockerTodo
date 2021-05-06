@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box';
 export default function App() {
   const [todos, setTodos] = useState([]); // local list of to-dos
   const [newTodo, setnewTodo] = useState(''); // new to-do (that user adds currently)
-
+  const [showMeme, setShowMeme] = useState(false); 
   // fetches to dos from the database and sets local list
   function fetchTodosData() {
     var tempTodos = [];
@@ -53,35 +53,54 @@ export default function App() {
     fetchTodosData();
   }, []);
 
-  return (
+  if(showMeme) {
+    return (
     <Box position='absolute' top='15%' left='15%'>
-      <input
-        id='newTodo'
-        placeholder='new to-do'
-        onChange={() => setnewTodo(event.target.value)}
-      ></input>
-      <button onClick={() => addTodo(newTodo)}> Add To-Do </button>
+      <img src={require("./meme.jpeg")} style={{width: '40%'}} alt="fun meme"/>
+      <button onClick={() => setShowMeme(false)}> Back to main page </button>
+    </Box>
+    )
+    
+  } else return (
+    <Box>
 
-      <Box p={1} margin='10px' textAlign='center' fontFamily='sans-serif'>
-        <h2>{'Current to-dos'}</h2>
+      <Box position='absolute' top='15%' left='15%'>
+        
+        <input
+          id='newTodo'
+          placeholder='new to-do'
+          onChange={() => setnewTodo(event.target.value)}
+        ></input>
+
+        <button onClick={() => addTodo(newTodo)}> Add To-Do </button>
+
+        <Box p={1} margin='5%' textAlign='center' fontFamily='sans-serif'>
+          <h2>{'Current to-dos'}</h2>
+        </Box>
+
+        <div>
+          {todos.map((todo) => (
+            <Box
+              bgcolor='#D6EBEF'
+              p={1}
+              margin='5%'
+              textAlign='center'
+              fontFamily='sans-serif'
+            >
+              <p>
+                {todo + ' '}
+                <button onClick={() => deleteTodo(todo)}> X </button>
+              </p>
+            </Box>
+          ))}
+        </div>
+      
       </Box>
 
-      <div>
-        {todos.map((todo) => (
-          <Box
-            bgcolor='#D6EBEF'
-            p={1}
-            margin='10px'
-            textAlign='center'
-            fontFamily='sans-serif'
-          >
-            <p>
-              {todo + ' '}
-              <button onClick={() => deleteTodo(todo)}> X </button>
-            </p>
-          </Box>
-        ))}
-      </div>
+      <Box p={1} margin='75%' textAlign='right'>
+        <button onClick={() => setShowMeme(true)}> ? </button>
+      </Box>
+
     </Box>
   );
 }
