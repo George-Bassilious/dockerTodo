@@ -7,7 +7,7 @@ export default function App() {
   const [todos, setTodos] = useState([]); // local list of to-dos
   const [newTodo, setnewTodo] = useState(''); // new to-do (that user adds currently)
   const [showMeme, setShowMeme] = useState(false); 
-  // fetches to dos from the database and sets local list
+  // fetches to dos from the database and sets local list 
   function fetchTodosData() {
     var tempTodos = [];
     fetch('http://localhost:8000/api/todos')
