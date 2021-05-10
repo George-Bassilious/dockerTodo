@@ -2,7 +2,7 @@
 
 ## About the repository
 
-link to video tutorial : https://www.youtube.com/watch?v=JQ6DYyVUT6U 
+link to video tutorial : https://youtu.be/iYIwVbszVw4 
 
 This repository is complementary to this video tutorial which shows how to implement Docker in a React Native application. 
 
