@@ -2,9 +2,11 @@
 
 ## About the repository
 
-link to video tutorial : https://youtu.be/iYIwVbszVw4 
+link to video tutorial : https://youtu.be/L-Dh5ae4Zcg 
 
 This repository is complementary to this video tutorial which shows how to implement Docker in a React Native application. 
+
+**Note**: For the purposes of this demo we only show the app as a web application as the source code of the React native project is not compatible with ios and android devices. This is due to the fact the backend is not configured using Https connections and is blocked by most devices. In theory if your React native project has implemented SSL, the app will work on all devices with this docker tutorial
 
 ## Authors 
 
